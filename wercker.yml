@@ -35,4 +35,12 @@ build:
         name: go test
         code: |
           go test ./...
+deploy: 
+  steps:
+    - internal/docker-push:
+        username: $USERNAME
+        password: $PASSWORD 
+        cmd: /pipeline/source/
+        tag: latest
+        repository: westwind027/pipeline
 
