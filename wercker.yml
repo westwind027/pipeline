@@ -41,10 +41,8 @@ deploy:
         username: $USERNAME
         password: $PASSWORD 
         cmd: /pipeline/source/mypipe
-        port: "8080"
         tag: latest
         repository: westwind027/pipeline
-        registry: https://registry.hub.docker.com
 
 
 
