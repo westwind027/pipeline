@@ -28,7 +28,7 @@ build:
     - script:
         name: go build
         code: |
-          go build ./...
+          go build -o mypipe main.go
 
     # Test the project
     - script:
@@ -40,7 +40,11 @@ deploy:
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD 
-        cmd: /pipeline/source/
+        cmd: /pipeline/source/mypipe
+        port: "8080"
         tag: latest
         repository: westwind027/pipeline
+        registry: https://registry.hub.docker.com
+
+
 
