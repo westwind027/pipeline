@@ -28,7 +28,7 @@ build:
     - script:
         name: go build
         code: |
-          go build -o mypipe main.go
+          go build -o pipeline main.go
 
     # Test the project
     - script:
@@ -40,7 +40,7 @@ deploy:
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD 
-        cmd: /pipeline/source/mypipe
+        cmd: /pipeline/source/pipeline
         tag: latest
         repository: westwind027/pipeline
 
